@@ -1,0 +1,7 @@
+---
+permalink: bundle.js
+---
+{# Used .eleventy config addPassthroughCopy to copy individul files, i prefer not to js bundle #}
+{# {% include "./js/apexcharts/apexcharts.min-3.45.1.js" %}
+{% include "./js/alpinejs/3.13.3/package/dist/cdn.js" %} #}
+{# {% include "./js/boxicons/boxicons.min.2.1.4.js" %} #}

@@ -1,0 +1,146 @@
+
+<div class="content-wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-2 ">
+    {% include 'components/widgets/server-info.njk' %}
+
+    {% include 'components/widgets/ram-usage.njk' %}
+
+    <!--
+        [WIDGET - CPU Unitilization]
+    -->
+    <div class="rounded-md dark:shadow-sm shadow-md shadow-indigo-200 ring-1 ring-purple-200">
+        <div class="flex flex-col w-full">
+            <div class="bg-gradient-to-r from-cyan-400 to-blue-500 rounded-t-md">
+                <h2 class="shadow-md text-lg font-semibold badge p-4 text-white"><i class="fa-solid fa-server"></i> CPU
+                    Unitilization</h2>
+                <div class="border-t-2 border-y-slate-300 bg-white" id="chart-cpu-until">
+                    <script type="module">
+                        var options = {
+                            chart: {
+                                type: 'bar'
+                            },
+                            series: [{
+                                name: 'CPU Unitilization',
+                                data: [12, 86, 36, 85, 75, 50, 65, 91, 80]
+                            }],
+                            xaxis: {
+                                categories: ['7:25 pm', '7:25pm', '7:25pm', '7:25pm', '7:25pm', '7:25pm', '7:25pm', '7:25pm', '7:25pm']
+                            },
+                            theme: {
+                                palette: 'palette6' // upto palette10
+                            }
+                        }
+
+                        var chart = new ApexCharts(document.querySelector("#chart-cpu-until"), options);
+                        chart.render();
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--
+                                        [@END WIDGET - CPU Unitilization]
+                                    -->
+
+    <!--BASE WIDGET-->
+    <div class="rounded-md dark:shadow-sm shadow-md shadow-indigo-200 ring-1 ring-purple-200">
+        <div class="flex flex-col w-full">
+            <div class="bg-gradient-to-r from-cyan-500 to-blue-500 rounded-t-md">
+                <h2 class="text-lg font-semibold badge p-4 text-white"><i class="fa-solid fa-server"></i> Repositories
+                    usage</h2>
+                <div class="border-t-2 border-y-slate-300 bg-slate-300 bg-opacity-60" id="chart-repos">
+                    <script type="module">
+                        var options = {
+                            chart: {
+                                type: 'donut'
+                            },
+                            series: [20, 10, 24, 80],
+                            labels: ['zfs1', 'local', 'iscsi', 'smb2'],
+                            theme: {
+                                palette: "palette2"
+                            },
+                            plotOptions: {
+                                pie: {
+                                    donut: {
+                                        labels: {
+                                            show: false,
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        var chart = new ApexCharts(document.querySelector("#chart-repos"), options);
+                        chart.render();
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--BASE WIDGET-->
+
+
+    <!--BASE WIDGET-->
+    <div class="rounded-md dark:shadow-sm shadow-md shadow-indigo-200 ring-1 ring-purple-200">
+        <div class="flex flex-col w-full">
+            <div class="bg-gradient-to-r from-cyan-500 to-blue-500 rounded-t-md">
+                <h2 class="text-lg font-semibold badge p-4 text-white"><i class="fa-solid fa-server"></i> Memory/CPU
+                    Unitilization</h2>
+                <div class="bg-white" id="chart-mem">
+                    <script type="module">
+                        var options = {
+                            series: [{
+                                name: 'Memory',
+                                data: [31, 40, 28, 51, 42, 109, 100]
+                            }, {
+                                name: 'CPU',
+                                data: [11, 32, 45, 32, 34, 52, 41]
+                            }],
+                            chart: {
+                                height: 350,
+                                type: 'area'
+                            },
+                            dataLabels: {
+                                enabled: false
+                            },
+                            stroke: {
+                                curve: 'smooth'
+                            },
+                            xaxis: {
+                                type: 'datetime',
+                                categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+                            },
+                            tooltip: {
+                                x: {
+                                    format: 'dd/MM/yy HH:mm'
+                                },
+                            },
+                            theme: {
+                                palette: "palette6"
+                            },
+                        };
+
+                        var chart = new ApexCharts(document.querySelector("#chart-mem"), options);
+                        chart.render();
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--BASE WIDGET-->
+
+    <div class="bg-white rounded-lg shadow-md p-4 dark:bg-gray-800">
+        <h2 class="text-lg font-semibold">Widget 2</h2>
+        <p class="text-gray-500 dark:text-gray-400">Content goes here...</p>
+    </div>
+    <div class="bg-white rounded-lg shadow-md p-4 dark:bg-gray-800">
+        <h2 class="text-lg font-semibold">Widget 3</h2>
+        <p class="text-gray-500 dark:text-gray-400">Content goes here...</p>
+    </div>
+    <div class="bg-white rounded-lg shadow-md p-4 dark:bg-gray-800">
+        <h2 class="text-lg font-semibold">Widget 4</h2>
+        <p class="text-gray-500 dark:text-gray-400">Content goes here...</p>
+    </div>
+    <div class="bg-white rounded-lg shadow-md p-4 dark:bg-gray-800">
+        <h2 class="text-lg font-semibold">Widget 5</h2>
+        <p class="text-gray-500 dark:text-gray-400">Content goes here...</p>
+    </div>
+</div>

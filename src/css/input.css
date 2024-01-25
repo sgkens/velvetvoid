@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+@tailwind variants;
+
+@font-face {
+    font-family: 'Rubik Scribble';
+    src: url('css/fonts/rubik-scribble/RubikScribble-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Share Tech Mono';
+    src: url('cssfonts/share-tech-mono/ShareTechMono-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Tektur';
+    src: url('css/fonts/tektur/Tektur-VariableFont_wdth\,wght.ttf');
+}

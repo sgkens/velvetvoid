@@ -1,0 +1,74 @@
+{% extends "components/widgets/_widget-base.njk" %}
+
+{% block content %}
+    
+    <h2 class="flex shadow-md text-lg font-semibold p-4 text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            style="fill: rgba(251, 252, 255, 0.563);--darkreader-inline-fill: #e8e6e3;" data-darkreader-inline-fill="">
+            <path
+                d="M4 4v16c0 1.103.897 2  2 2h12c1.103 0 2-.897 2-2V8a.997.997 0 0 0-.293-.707l-5-5A.996.996 0 0 0 14 2H6c-1.103 0-2 .897-2 2zm14 4.414L18.001 20H6V4h7.586L18 8.414z">
+            </path>
+            <path d="M8 6h2v4H8zm4 0h2v4h-2z">
+            </path>
+        </svg>
+        Ram Unitilization
+    </h2>
+
+    <div class="bg-white" id="ram-usage">
+        <script type="module">
+            var options = {
+                chart: { type: 'radialBar', },
+                series: [85],
+                labels: ['RAM-8GB'],
+                colors: ["#20E647"],
+                stroke: { lineCap: "round", },
+                fill: {
+                    type: "gradient",
+                    gradient: {
+                        shade: "dark",
+                        type: "vertical",
+                        gradientToColors: ["#87D4F9"],
+                        stops: [0, 100]
+                    }
+                },
+                plotOptions: {
+                    radialBar: {
+                        hollow: {
+                            margin: 0,
+                            size: "70%", /*Thinness of the bar*/
+                            background: "#293450"
+                        }, 
+                        dataLabels: {
+                            showOn: "always",
+                            name:{ 
+                                color: "#fff", /* color of % value */
+                                fontSize: "18px" 
+                            }, 
+                            value: {
+                                color: "#fff",
+                                fontSize: "15px",
+                                show: true
+                            }
+                        },
+                        track: {
+                            dropShadow: {
+                                enabled: true,
+                                top: 2,
+                                left: 0,
+                                blur: 4,
+                                opacity: 0.15
+                            }
+                        }
+                    }
+                }
+            }
+            var chart = new ApexCharts(document.querySelector("#ram-usage"), options);
+
+            chart.render();
+        </script>
+    </div>
+
+{% endblock %}
+
+
+
