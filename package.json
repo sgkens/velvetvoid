@@ -21,7 +21,7 @@
   "scripts": {
     "bundle-webpack" : "npx webpack --config webpack.config.js",
     "build": "npx tailwindcss -i ./src/css/input.css -o ./src/css/main.css && npx @11ty/eleventy",
-    "start": "npx @11ty/eleventy --serve",
+    "serve": "npx @11ty/eleventy --serve",
     "c-server": "node .\\server.mjs"
   },
   "dependencies": {
